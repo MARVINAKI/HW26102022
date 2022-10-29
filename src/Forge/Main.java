@@ -9,7 +9,7 @@ public class Main {
         authorThird = new Author("Уильям", "Шекспир");
 
         Book bookFirst, bookSecond, bookThird;
-        bookFirst = new Book("Мастер и Маргарита", authorFirst, 32); // Дата публикации 1967
+        bookFirst = new Book("Ведьмак", authorFirst, 32); // Дата публикации 1967
         bookSecond = new Book("Ведьмак", authorSecond, 12312); // Дата публикации 1986
         bookThird = new Book("Сон в летнюю ночь", authorThird, 7684); // Дата написания 1595
 
@@ -21,6 +21,17 @@ public class Main {
         System.out.println(bookFirst.getFullInfoOfBook() + "\n");
         System.out.println(bookSecond.getFullInfoOfBook() + "\n");
         System.out.println(bookThird.getFullInfoOfBook() + "\n");
+
+        System.out.println(authorFirst);
+        System.out.println(authorFirst.equals(authorSecond) ? "Такой автор уже имеется." +
+                authorSecond
+                : "Совпадений не найдено");
+        System.out.println();
+        System.out.println(bookFirst);
+        System.out.println(!bookFirst.equals(bookSecond) ? "Книги с таким же названием нет"
+                : "Книга с таким же названием уже есть в списке. "
+                + bookSecond);
+        System.out.println();
 
 
     }
