@@ -1,6 +1,8 @@
 package Forge;
 
 
+import java.util.Objects;
+
 public class Author {
     private final String nameOfAuthor;
     private final String surnameOfAuthor;
@@ -31,5 +33,23 @@ public class Author {
                 : nameOfAuthor.trim().isEmpty() ? this.surnameOfAuthor
                 : surnameOfAuthor.trim().isEmpty() ? this.nameOfAuthor
                 : this.nameOfAuthor + " " + this.surnameOfAuthor;
+    }
+
+    @Override
+    public String toString() {
+        return nameOfAuthor + " " + surnameOfAuthor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return nameOfAuthor.equals(author.nameOfAuthor) && surnameOfAuthor.equals(author.surnameOfAuthor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameOfAuthor, surnameOfAuthor);
     }
 }

@@ -1,6 +1,7 @@
 package Forge;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Book {
     private final String titleOfBook;
@@ -41,4 +42,23 @@ public class Book {
         this.dateOfPublication = dateOfPublication;
     }
 
+
+    @Override
+    public String toString() {
+        return "Книга " + titleOfBook + " под авторством " + authorOfBook +
+                " издана " + dateOfPublication;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return titleOfBook.equals(book.titleOfBook);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titleOfBook);
+    }
 }
